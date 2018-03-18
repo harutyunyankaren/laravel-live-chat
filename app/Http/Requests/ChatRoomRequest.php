@@ -24,8 +24,8 @@ class ChatRoomRequest extends FormRequest
     public function rules()
     {
         return [
-//            'name' => 'required|unique|max:256',
-//            'image' => 'image|mimes:jpg,png|max:5000',
+            'name' => 'required|max:256|unique:chat_rooms',
+            'image' => 'image|max:5000',
         ];
     }
 }

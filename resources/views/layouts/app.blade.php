@@ -84,5 +84,15 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#join').click(function () {
+            var link = $('#link').val();
+
+            window.location.href = link;
+        })
+    });
+</script>
 </body>
 </html>

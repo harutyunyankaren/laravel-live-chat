@@ -32,11 +32,11 @@ const app = new Vue({
         this.fetchMessages(roomId);
         Echo.channel('chat-room.' + roomId)
             .listen('MessageSent', (e) => {
-            this.messages.push({
-            message: e.message.message,
-            sender_name: e.sender_name
+                this.messages.push({
+                message: e.message.message,
+                sender_name: e.sender_name
+            });
         });
-    });
     },
 
     methods: {
@@ -47,8 +47,6 @@ const app = new Vue({
         },
 
         addMessage(message) {
-            console.log('message');
-            console.log(message);
             this.messages.push(message);
 
             axios.post('/messages/' + roomId, message).then(response => {

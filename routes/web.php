@@ -17,9 +17,9 @@ Route::get('/', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::post('store-room', 'ChatRoomController@store');
+    Route::get('/{key}', 'ChatRoomController@goToPrivateChatRoom');
 });
 
 Route::get('/chat-room/{id}', 'ChatRoomController@index');
-Route::get('/privat-chat-room/{key}', 'ChatRoomController@goToPrivateChatRoom');
 Route::get('messages/{id}', 'ChatRoomController@fetchMessages');
 Route::post('messages/{id}', 'ChatRoomController@sendMessage');

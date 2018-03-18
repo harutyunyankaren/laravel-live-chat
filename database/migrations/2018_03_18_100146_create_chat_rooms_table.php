@@ -20,8 +20,6 @@ class CreateChatRoomsTable extends Migration
             $table->text('image')->nullable();
             $table->boolean('is_private')->default(false);
             $table->string('link')->nullable();
-            $table->integer('members_count')->default(0);
-            $table->integer('online_users_count')->default(0);
             $table->timestamps();
 
             $table->foreign('created_by')
